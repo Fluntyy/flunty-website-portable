@@ -1,0 +1,37 @@
+.about-container {
+  padding: 0 48px 0;
+  overflow: auto;
+  margin-bottom: 3rem;
+  user-select: text;
+}
+
+.icons {
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: middle;
+  pointer-events: none;
+}
+
+@media (max-width: 57.75rem) {
+  .card {
+    width: 100% !important;
+    height: 40rem !important;
+    margin: 1.5rem;
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c8c6c4;
+  border: 6px solid transparent;
+  border-radius: 8px;
+  background-clip: padding-box; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ffffff;
+  border: 5px solid transparent;
+}
+
+::-webkit-scrollbar {
+  width: 16px;
+}
