@@ -1,89 +1,60 @@
-# flunty-website-portable
-A portable version of my website. It's useless, I know.
+# Flunty's Website Portable
+A portable version of my website. It's completely useless, but hey, at least it’s portable! 🎉
 
 ![Screenshot of Flunty's Website Portable directory](https://github.com/user-attachments/assets/bb6cf3f8-8733-4339-8ae6-9a43e519d0f1)
 
-## Usage
-1. Download the ISO [here](https://github.com/Fluntyy/flunty-website-portable/releases/latest).
-2. Burn it onto a USB or DVD, or just double-click the ISO.
-3. Open Explorer and double-click Flunty's Website Portable.
-4. That's it. The server is running on port 3000.
+## Prebuilt ISO
+No need to break a sweat building it yourself—just grab the prebuilt ISO and let it do all the heavy lifting for you.
 
-## Build
-To build the project, you need to configure Flunty's Website for the Node adapter.
+1. **Download the prebuilt ISO**: [Latest Release](https://github.com/Fluntyy/flunty-website-portable/releases/latest)
+2. **Burn the ISO**: 
+    - Burn it to a USB drive or DVD. (Or just double-click the ISO file, no DVD-burning wizardry required.)
+3. **Run the Website**: 
+    - Open **Explorer** and double-click the `Flunty's Website Portable` folder. (It’s magic!)
+    - The server will start running on port 3000. (Don't worry, it won’t bite.)
+4. **That's it!** Just sit back, relax, and pretend it's the most useful thing you've ever done.
 
-1. Clone the Flunty's Website repository and install the Node adapter:
-    ```console
-    git clone https://github.com/Fluntyy/flunty-website.git
-    cd ./flunty-website
-    npm i -D @sveltejs/adapter-node
+## Build it Yourself (Recommended)
+If you’re feeling adventurous and want to see how the sausage is made, go ahead and build it yourself! It’s more fun, and you’ll get the freshest, hottest version of Flunty’s Website and Node.js.
+
+### Prerequisites
+Before you start, make sure you have:
+- **An internet connection** (unless you’re a wizard, in which case... teach me your ways)
+- **A Windows machine** (Sorry, Mac and Linux users, you’ll have to just enjoy the website)
+- **Python** (v3.6+)
+- **Node.js** (for building the website)
+- **Git**
+
+### Requirements
+- `requests` 
+
+(Just run `pip install requests` and boom, you're good to go)
+
+### Steps
+
+1. **Run the Builder Script**:  
+    Open a terminal and run the Python builder script.
+    ```bash
+    python builder.py
     ```
 
-2. Add the adapter to `svelte.config.js`:
-    ```js
-    import adapter from '@sveltejs/adapter-node';
-    import preprocess from 'svelte-preprocess';
-    import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-
-    /** @type {import('@sveltejs/kit').Config} */
-    const config = {
-        preprocess: [
-            preprocess({
-                postcss: true
-            })
-        ],
-        kit: {
-            adapter: adapter({ precompress: true })
-        }
-    };
-
-    export default {
-        // preprocess: [vitePreprocess()]
-    } && config;
+2. **Pick Your Node.js Version**:  
+    The script will ask for the Node.js version you want. It has to be **LTS** (Long Term Support) because that’s the only version that still remembers what 32-bit systems are. If you're unsure, just hit enter to go with the default version (`22.13.1`).
+    ```
+    Which Node.js version would you like to use? (LTS only, default 22.13.1):
     ```
 
-3. Build the project:
-    ```console
-    npm run build
-    ```
+3. **Let the Magic Happen**:  
+    Wait for the script to work its wizardry. Once it’s done, it’ll generate a shiny new `flunty-website-portable.iso` in your current directory.
 
-4. Clone this repository and copy the `build` folder to `flunty-website-portable`:
-    ```console
-    git clone https://github.com/Fluntyy/flunty-website-portable.git
-    ```
+4. **Burn the ISO**:  
+    Now you can burn the ISO onto a USB or DVD (or just mount it and marvel at your creation).
 
-5. Download Node.js portable [here](https://nodejs.org/en/download/prebuilt-binaries/current), extract it, and copy it to the `flunty-website-portable` folder.
+Now, you've got a portable website that may or may not change the world (but at least it looks cool). Happy coding, and remember: If you don’t build it, it’s just a fancy flash drive. 😎
 
-    <img src="https://github.com/user-attachments/assets/b2cb1948-c42f-48f7-94c2-c5eb6c0dab58" width="540">
+<br><br>
 
-6. Use [UltraISO](https://www.ultraiso.com/) or a similar tool to create the ISO.
+---
 
-    <img src="https://github.com/user-attachments/assets/c53dc4ce-0d17-4ab9-a1b5-646f1971acda" width="540">
-
-7. That's it. Now you have your own `flunty-website-portable.iso`.
-
-If you want to build the universal version, you will need to download every Node.js architecture (x86, x64, ARM64), put it into a folder (`.\node\x86\`, `.\node\x64\`, `.\node\arm64\`), and edit `start.bat` to the following:
-```bat
-@echo off
-cd %~dp0
-
-REM Start the local server
-start http://127.0.0.1:3000
-
-REM Determine the system architecture
-set ARCHITECTURE=%PROCESSOR_ARCHITECTURE%
-
-REM Execute the appropriate Node.js command based on architecture
-echo Press Ctrl+C or close this window to stop the server.
-if "%ARCHITECTURE%"=="X86" (
-    node\x86\node build\index.js
-) else if "%ARCHITECTURE%"=="AMD64" (
-    node\x64\node build\index.js
-) else if "%ARCHITECTURE%"=="ARM64" (
-    node\arm64\node build\index.js
-) else (
-    echo Unable to determine architecture.
-    pause
-    exit /b 1
-)
-```
+# This README.md is generated using ChatGPT 🤖
+Because I can't make a proper and somehow funny README....
